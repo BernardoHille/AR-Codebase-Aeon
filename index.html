@@ -126,6 +126,13 @@
 		  transform: translate(-50%, -50%); /* Ajusta para centralizar totalmente */
 		  width:80%;
 		}
+		#acessar_site{
+		  position: fixed;       /* Deixa a imagem fixa na tela */
+		  width: 50%;            /* Tamanho da imagem */
+		  bottom: 20%;             /* Alinha a imagem na parte inferior */
+		  left: 50%;             /* Centraliza horizontalmente */
+		  transform: translateX(-50%); /* Ajusta para centralizar totalmente */
+		}
 	</style>
   </head>
   <body>
@@ -154,8 +161,8 @@
 		</a-entity>
     </a-scene>
 	<div id="overlay"><img src="aeon_branco.svg" id="imagem"></div>
-	<button aria-label="Acesse nosso site!" id="acessar-site">
-		<img src="T_acessarSite.svg" id="imagem">
+	<button aria-label="Acesse nosso site!" id="acessar_site">
+		<img src="T_acessarSite.svg" id="acessar_site">
 	</button>
   </body>
 </html>
