@@ -8,8 +8,6 @@
       document.addEventListener("DOMContentLoaded", function() {
 	const sceneEl = document.querySelector('a-scene');
 	let arSystem;
-	arSystem.start();
-	console.log("Sistema AR Inciado");
 	sceneEl.addEventListener('loaded', function () {
 	  arSystem = sceneEl.systems["mindar-image-system"];
 	});
@@ -21,10 +19,6 @@
 	const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
 	const unpauseButton = document.querySelector("#example-unpause-button");
 	const video = document.getElementById('video'); // Constante de vídeo
-	/*startButton.addEventListener('click', () => {
-	  console.log("start");
-	  arSystem.start(); // start AR 
-	});*/
 	stopButton.addEventListener('click', () => {
 	  arSystem.stop(); // stop AR 
 	});
