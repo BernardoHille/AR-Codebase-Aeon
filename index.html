@@ -61,8 +61,8 @@
 	  console.log("Video Play");
 	  video.muted = false;
 	  console.log("Video Desmutado")
-	  scan_overlay.style.display = 'hidden'; // Quando o target é encontrado o overlay é escondido
-	  console.log("scan overlay hidden")
+	  scan_overlay.style.display = 'none'; // Quando o target é encontrado o overlay é escondido
+	  console.log("scan overlay none")
 	});
 	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
@@ -71,8 +71,8 @@
 	  console.log("Video Pause");
 	  video.muted = true;
 	  console.log("Video Mutado")
-	  scan_overlay.style.display = 'fixed'; // Quando o target é encontrado o overlay aparece novamente
-	  console.log("scan overlay fixed")
+	  scan_overlay.style.display = 'block'; // Quando o target é encontrado o overlay aparece novamente
+	  console.log("scan overlay block")
 	});
 
 	/*
@@ -120,7 +120,7 @@
 		  transform: translateX(-50%); /* Ajusta para centralizar totalmente */
 		}
 		#scan_svg{
-		  position: hidden;       /* Fixa a imagem na tela */
+		  position: fixed;       /* Fixa a imagem na tela */
 		  top: 40%;              /* Posiciona a imagem no centro vertical */
 		  left: 50%;             /* Posiciona a imagem no centro horizontal */
 		  transform: translate(-50%, -50%); /* Ajusta para centralizar totalmente */
