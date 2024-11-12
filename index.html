@@ -19,10 +19,14 @@
 	const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
 	const unpauseButton = document.querySelector("#example-unpause-button");
 	const video = document.getElementById('video'); // Constante de vídeo
-	startButton.addEventListener('click', () => {
+
+	arSystem.start();
+	console.log("Sistema AR Inciado");
+	
+	/*startButton.addEventListener('click', () => {
 	  console.log("start");
 	  arSystem.start(); // start AR 
-	});
+	});*/
 	stopButton.addEventListener('click', () => {
 	  arSystem.stop(); // stop AR 
 	});
@@ -71,7 +75,7 @@
       <button id="example-unpause-button">UnPause</button>
       <button id="example-stop-button">Stop</button>
     </div>
-    <a-scene mindar-image="imageTargetSrc: targets1_1.mind; autoStart: false;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="imageTargetSrc: targets1_1.mind; filterMinCF:0.001; filterBeta: 0.001; warmupTolerance: 5; missTolerance: 5;" device-orientation-permission-ui="enabled: false" xr-mode-ui="enabled: false">
 		<a-assets>
 			<video id="video" src="rickroll.mp4" autoplay loop muted crossorigin="anonymous" playsinline></video>
 		</a-assets>
