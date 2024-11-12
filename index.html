@@ -112,20 +112,22 @@
 		  transform: translate(-50%,-50%);
 		  -ms-transform: translate(-50%,-50%);
 		}
-		#imagem{
+		#logo{
 		  position: fixed;       /* Deixa a imagem fixa na tela */
 		  width: 50%;            /* Tamanho da imagem */
 		  bottom: 10%;             /* Alinha a imagem na parte inferior */
 		  left: 50%;             /* Centraliza horizontalmente */
 		  transform: translateX(-50%); /* Ajusta para centralizar totalmente */
 		}
+		@media (max-width: 600px) {
 		#scan_svg{
 		  position: fixed;       /* Fixa a imagem na tela */
 		  top: 40%;              /* Posiciona a imagem no centro vertical */
 		  left: 50%;             /* Posiciona a imagem no centro horizontal */
 		  transform: translate(-50%, -50%); /* Ajusta para centralizar totalmente */
 		  width:80%;
-		}
+		}}
+		@media (max-width: 200px) {
 		#acessar_site{
 		  position: fixed;       /* Deixa a imagem fixa na tela */
 		  width: 80%;            /* Tamanho da imagem */
@@ -133,7 +135,7 @@
 		  left: 50%;             /* Centraliza horizontalmente */
 		  transform: translateX(-50%); /* Ajusta para centralizar totalmente */
 		  z-index: 1000;
-		}
+		}}
 	</style>
   </head>
   <body>
@@ -161,7 +163,7 @@
 		  <a-video src="#video" width="1" height="1" position="0 0 0" rotation="0 0 0"></a-video> <!-- Editar tamanho, escala e rotacao do texto! -->
 		</a-entity>
     </a-scene>
-	<div id="overlay"><img src="aeon_branco.svg" id="imagem"></div>
+	<div id="overlay"><img src="aeon_branco.svg" id="logo"></div>
 	<a href="https://www.aeonvr.com.br/"><img src="T_acessarSite.svg" id="acessar_site"></a>
   </body>
 </html>
