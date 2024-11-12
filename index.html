@@ -18,6 +18,7 @@
 	const pauseButton = document.querySelector("#example-pause-button");
 	const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
 	const unpauseButton = document.querySelector("#example-unpause-button");
+	const video = document.getElementById('video'); // Constante de vídeo
 	startButton.addEventListener('click', () => {
 	  console.log("start");
 	  arSystem.start(); // start AR 
@@ -45,6 +46,9 @@
 	// detect target found
 	exampleTarget.addEventListener("targetFound", event => {
 	  console.log("target found");
+	  video.play();
+	  console.log("Video Play");
+
 	});
 	// detect target lost
 	exampleTarget.addEventListener("targetLost", event => {
