@@ -19,6 +19,16 @@
 	const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
 	const unpauseButton = document.querySelector("#example-unpause-button");
 	const video = document.getElementById('video'); // Constante de vídeo
+	
+	
+	/*
+	***
+	Abaixo temos alguns scripts voltados a debug, eles estão linkados com botões dentro do <body>.
+	Estes botões são Start, Pause, Pause (Keep Video), Unpause e Stop.
+	Start é ligado a função arSystem.start() e só funciona quando autostart do a-scene é autostart=False | Pause para toda a cena | Pause (keep video) pausa a cena potrém deixa o vídeo rodando
+	Unpause desliga todas as funcoes de pause | Stop para todo o sistema de ARSystem e só volta ao clicar Start novamente
+	***
+
 	stopButton.addEventListener('click', () => {
 	  arSystem.stop(); // stop AR 
 	});
@@ -31,38 +41,57 @@
 	unpauseButton.addEventListener('click', () => {
 	  arSystem.unpause(); // unpause AR and video
 	});
-	// arReady event triggered when ready
+	
+	*/
+
+
+	// Evento arReady acionado quando pronto
 	sceneEl.addEventListener("arReady", (event) => {
-	  // console.log("MindAR is ready")
+	  	console.log("Sistema de Realidade Aumentada iniciado corretamente")
 	});
-	// arError event triggered when something went wrong. Mostly browser compatbility issue
+	// Evento arError acionado quando algo deu errado. Principalmente problema de compatibilidade do navegador
 	sceneEl.addEventListener("arError", (event) => {
-	  // console.log("MindAR failed to start")
+	  	console.log("Falha ao iniciar Sistema de Realidade Aumentada")
 	});
-	// detect target found
+	// detectar Target encontrado
 	exampleTarget.addEventListener("targetFound", event => {
-	  console.log("target found");
+	  console.log("Target encontrado");
 	  video.play();
 	  console.log("Video Play");
 	  video.muted = false;
 	  console.log("Video Desmutado")
 	});
-	// detect target lost
+	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
-	  console.log("target lost");
+	  console.log("Target perdido");
 	  video.pause();
 	  console.log("Video Pause");
 	  video.muted = true;
 	  console.log("Video Mutado")
 	});
-	// detect click event
+
+	/*
+	***
+	Evento de click no plano de Realidade Aumentada, não utilizado no atual projeto e não testado
+	***
+
+	// detectar click event
 	examplePlane.addEventListener("click", event => {
 	  console.log("plane click");
 	});
+	
+	*/
+
+
       });
     </script>
   </head>
   <body>
+	<!--
+	***
+	Div dos botões linkados a scripts de debug
+	***
+
     <div style="position: absolute; z-index: 1000">
       <button id="example-start-button">Start</button>
       <button id="example-pause-button">Pause</button>
@@ -70,6 +99,7 @@
       <button id="example-unpause-button">UnPause</button>
       <button id="example-stop-button">Stop</button>
     </div>
+	-->
     <a-scene mindar-image="imageTargetSrc: targets1_1.mind; filterMinCF:0.001; filterBeta: 0.001; warmupTolerance: 5; missTolerance: 5;" device-orientation-permission-ui="enabled: false" xr-mode-ui="enabled: false">
 		<a-assets>
 			<video id="video" src="rickroll.mp4" autoplay loop muted crossorigin="anonymous" playsinline></video>
