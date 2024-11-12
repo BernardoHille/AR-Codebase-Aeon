@@ -44,13 +44,16 @@
 	  console.log("target found");
 	  video.play();
 	  console.log("Video Play");
-
+	  video.muted = false;
+	  console.log("Video Desmutado")
 	});
 	// detect target lost
 	exampleTarget.addEventListener("targetLost", event => {
 	  console.log("target lost");
 	  video.pause();
 	  console.log("Video Pause");
+	  video.muted = true;
+	  console.log("Video Mutado")
 	});
 	// detect click event
 	examplePlane.addEventListener("click", event => {
