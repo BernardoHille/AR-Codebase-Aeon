@@ -53,6 +53,8 @@
 	// detect target lost
 	exampleTarget.addEventListener("targetLost", event => {
 	  console.log("target lost");
+	  video.pause();
+	  console.log("Video Pause");
 	});
 	// detect click event
 	examplePlane.addEventListener("click", event => {
