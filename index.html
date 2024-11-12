@@ -62,6 +62,7 @@
 	  video.muted = false;
 	  console.log("Video Desmutado")
 	  scan_overlay.style.display = 'hidden'; // Quando o target é encontrado o overlay é escondido
+	  console.log("scan overlay hidden")
 	});
 	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
@@ -71,6 +72,7 @@
 	  video.muted = true;
 	  console.log("Video Mutado")
 	  scan_overlay.style.display = 'fixed'; // Quando o target é encontrado o overlay aparece novamente
+	  console.log("scan overlay fixed")
 	});
 
 	/*
