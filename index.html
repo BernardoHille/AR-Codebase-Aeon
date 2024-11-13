@@ -22,6 +22,7 @@
 	const scan_overlay = document.getElementById('scan_svg'); // Constante do scan overlay
 	let TargetEmCamera;
 	let TempoTargetPerdido = 0;
+	let intervalId;
 	
 	/*
 	***
@@ -80,9 +81,11 @@
 	  TargetEmCamera = 0;
 	  console.log(TargetEmCamera);
 	  if (TargetEmCamera == 0) {
+		const intervalId = setInterval(() => {
 		TempoTargetPerdido++;
+    	console.log(TempoTargetPerdido);
+  	  	}, 1000);
 	  };
-	  console.log(TempoTargetPerdido);
 	});
 
 	/*
