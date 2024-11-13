@@ -21,7 +21,7 @@
 	const video = document.getElementById('video'); // Constante de vídeo
 	const scan_overlay = document.getElementById('scan_svg'); // Constante do scan overlay
 	let TargetEmCamera;
-	let TempoTargetPerdido;
+	let TempoTargetPerdido = 0;
 	
 	/*
 	***
@@ -66,6 +66,7 @@
 	  console.log("scan overlay none");
 	  TargetEmCamera = 1;
 	  console.log(TargetEmCamera);
+	  TempoTargetPerdido = 0;
 	});
 	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
