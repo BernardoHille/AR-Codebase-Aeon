@@ -63,6 +63,7 @@
 	  scan_overlay.style.display = 'none'; // Quando o target é encontrado o overlay é escondido
 	  console.log("scan overlay none")
 	  clearTimeout(lostTimeout);
+	  console.log("Timeout cancelado")
 	});
 	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
@@ -74,10 +75,12 @@
 	  scan_overlay.style.display = 'block'; // Quando o target é encontrado o overlay aparece novamente
 	  console.log("scan overlay block")
 	  lostTimeout = setTimeout(restartVideo, 10000);
+	  console.log("Timeout iniciado");
 	});
 
 	function restartVideo() {
 	  video.currentTime = 0;
+	  console.log("Video reiniciado")
 	}
 
 	/*
