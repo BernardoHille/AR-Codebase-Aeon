@@ -85,6 +85,8 @@
 		TempoTargetPerdido++;
     	console.log(TempoTargetPerdido);
   	  	}, 1000);
+	  } else if (TempoTargetPerdido == 0) {
+		clearInterval(intervalId);
 	  };
 	});
 
