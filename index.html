@@ -64,6 +64,12 @@
 	  scan_overlay.style.display = 'none'; // Quando o target é encontrado o overlay é escondido
 	  console.log("scan overlay none")
 	  TargetEncontrado = 1;
+	  if (TargetEncontrado === 1) {
+	    clearInterval(timer);
+	    timer = null;  // Reset timer ID
+	    console.log("Timer stopped.");
+		console.log(timer);
+	    }
 	});
 	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
@@ -79,6 +85,7 @@
 	    // Start the timer if not already started
 	    if (!timer) {
 	      timer = setInterval(() => {
+			timer++;
 	        console.log("Timer is running...");
 			console.log(timer);
 	      }, 1000);  // Runs every 1 second
