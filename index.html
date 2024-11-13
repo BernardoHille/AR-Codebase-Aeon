@@ -66,6 +66,7 @@
 	});
 	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
+	  let count = 0;
 	  console.log("Target perdido");
 	  video.pause();
 	  console.log("Video Pause");
@@ -73,9 +74,7 @@
 	  console.log("Video Mutado")
 	  scan_overlay.style.display = 'block'; // Quando o target é encontrado o overlay aparece novamente
 	  console.log("scan overlay block")
-	  setTimeout(function() {
-		video.currentTime = 0;
-	  }, 5000);
+	  count++;
 	});
 
 	/*
