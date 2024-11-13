@@ -64,19 +64,28 @@
 	  video.muted = false;
 	  console.log("Video Desmutado");
 	  scan_overlay.style.display = 'none'; // Quando o target é encontrado o overlay é escondido
+<<<<<<< HEAD
 	  console.log("scan overlay none");
 	  TargetEmCamera = 1;
 	  console.log(TargetEmCamera);
 	  TempoTargetPerdido = 0;
+=======
+	  console.log("scan overlay none")
+	  countSegundosTargetLost = null;
+	  clearInterval(intervalId); // Para o intervalo quando o target é encontrado
+      intervalId = null;
+>>>>>>> parent of ef5b36e (Retorno a algo mais definitivo)
 	});
 	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
+	  let countSegundosTargetLost = 0;
 	  console.log("Target perdido");
 	  video.pause();
 	  console.log("Video Pause");
 	  video.muted = true;
 	  console.log("Video Mutado");
 	  scan_overlay.style.display = 'block'; // Quando o target é encontrado o overlay aparece novamente
+<<<<<<< HEAD
 	  console.log("scan overlay block");
 	  TargetEmCamera = 0;
 	  console.log(TargetEmCamera);
@@ -89,6 +98,13 @@
 		clearInterval(intervalId);
 		intervalId.stop();
 	  };
+=======
+	  console.log("scan overlay block")
+	  const intervalId = setInterval(() => {
+    	countSegundosTargetLost++;
+    	console.log(countSegundosTargetLost);
+  	  }, 1000);
+>>>>>>> parent of ef5b36e (Retorno a algo mais definitivo)
 	});
 
 	/*
