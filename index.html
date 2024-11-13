@@ -87,6 +87,7 @@
   	  	}, 1000);
 	  } else if (TempoTargetPerdido == 0) {
 		clearInterval(intervalId);
+		intervalId.stop();
 	  };
 	});
 
