@@ -19,6 +19,7 @@
 	const unpauseButton = document.querySelector("#example-unpause-button");
 	const video = document.getElementById('video'); // Constante de vídeo
 	const scan_overlay = document.getElementById('scan_svg'); // Constante do scan overlay
+	let lostTimeout;
 	
 	/*
 	***
@@ -61,6 +62,7 @@
 	  console.log("Video Desmutado")
 	  scan_overlay.style.display = 'none'; // Quando o target é encontrado o overlay é escondido
 	  console.log("scan overlay none")
+	  clearTimeout(lostTimeout);
 	});
 	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
@@ -71,7 +73,12 @@
 	  console.log("Video Mutado")
 	  scan_overlay.style.display = 'block'; // Quando o target é encontrado o overlay aparece novamente
 	  console.log("scan overlay block")
+	  lostTimeout = setTimeout(restartVideo, 10000);
 	});
+
+	function restartVideo() {
+	  video.currentTime = 0;
+	}
 
 	/*
 	***
