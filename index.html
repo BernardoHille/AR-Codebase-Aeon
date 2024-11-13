@@ -83,13 +83,11 @@
 	  TargetEncontrado = 0;
 	  if (TargetEncontrado === 0) {
 	    // Start the timer if not already started
-	    if (!timer) {
 	      timer = setInterval(() => {
-			timer++;
-	        console.log("Timer is running...");
-			console.log(timer);
+		  timer++;
+	      console.log("Timer is running...");
+		  console.log(timer);
 	      }, 1000);  // Runs every 1 second
-	    }
 	  } else if (TargetEncontrado === 1) {
 	    // Stop the timer if it's running
 	    clearInterval(timer);
