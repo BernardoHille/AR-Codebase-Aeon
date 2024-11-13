@@ -64,10 +64,11 @@
 	  console.log("Video Desmutado")
 	  scan_overlay.style.display = 'none'; // Quando o target é encontrado o overlay é escondido
 	  console.log("scan overlay none")
-	  if (intervalId) {
-		clearInterval(intervalId);
-		console.log("Interval Cleared");
-	  }
+	  if (intervalId !== null) {
+    	clearInterval(intervalId); // Para o intervalo quando o target é encontrado
+    	intervalId = null; // Redefine intervalId para permitir futuros intervalos
+    	console.log("Target encontrado novamente. Intervalo parado.");
+  	}
 	});
 	// detectar Target perdido
 	exampleTarget.addEventListener("targetLost", event => {
